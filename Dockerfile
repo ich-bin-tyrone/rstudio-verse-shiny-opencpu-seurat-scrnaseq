@@ -1,14 +1,12 @@
 FROM docker.io/btip2024/rstudio-verse-shiny-opencpu-seurat
 
 RUN \
-    apt-get update && \
-    apt-get upgrade 
+    apt-get update -y && \
+    apt-get upgrade -y
 
-RUN mkdir -p /script
+COPY installation.R /scripts
 
-COPY installation.R /script
-
-RUN Rscript /script/installation.R
+RUN Rscript /scripts/installation.R
 
 EXPOSE 80
 EXPOSE 443
