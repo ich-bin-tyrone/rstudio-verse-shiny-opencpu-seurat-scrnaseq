@@ -4,6 +4,8 @@ RUN \
     apt-get update -y && \
     apt-get upgrade -y
 
+RUN mkdir -p /scripts
+
 COPY installation.R /scripts
 
 RUN Rscript /scripts/installation.R
