@@ -13,7 +13,7 @@ RUN Rscript /scripts/installation.R
 WORKDIR "/root"
 RUN git clone https://github.com/BTIP2024/DR-scRNAseq
 
-COPY ./DR-scRNAseq/* /srv/shiny-server/
+RUN cp -R /root/DR-scRNAseq /srv/shiny-server/
 
 EXPOSE 80
 EXPOSE 443
